@@ -86,7 +86,7 @@ static void pre_generic(void *gcc_data, void *user_data)
     printf(PLUGIN_NAME ":pre_generic\n");
 
     // Print AST
-    tree fndecl = gcc_data;
+    tree fndecl = (tree)gcc_data;
 
     if (TREE_CODE(fndecl) == FUNCTION_DECL) {
         tree id = DECL_NAME(fndecl);
